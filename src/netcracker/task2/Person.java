@@ -23,22 +23,28 @@ public class Person {
         this.firstName = null;
     }
 
+    /**
+     * override toString for Person
+     * @return String like "Фамилия И.О." or "Фамилия И." or "Фамилия"
+     */
+
+    @Override
     public String toString() {
         if(firstName != null){
             StringBuilder sb = new StringBuilder();
             if(middleName != null) {
-                sb.append(lastName);
-                sb.append(" ");
-                sb.append(firstName.charAt(0));
-                sb.append(".");
-                sb.append(middleName.charAt(0));
-                sb.append(".");
+                sb.append(lastName)
+                        .append(" ")
+                        .append(firstName.charAt(0))
+                        .append(".")
+                        .append(middleName.charAt(0))
+                        .append(".");
                 return new String(sb); // return lastName + ' ' + firstName.charAt(0) + '.' + middleName.charAt(0) + '.'
             }
-            sb.append(lastName);
-            sb.append(" ");
-            sb.append(firstName.charAt(0));
-            sb.append(".");
+            sb.append(lastName)
+                    .append(" ")
+                    .append(firstName.charAt(0))
+                    .append(".");
             return new String(sb); // return lastName + ' ' + firstName.charAt(0) + '.'
         }
         return lastName; // return lastName
